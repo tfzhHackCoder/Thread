@@ -34,14 +34,14 @@ public class ConcurrencyTest {
                     add();
                     semaphore.release();
                 } catch (Exception e) {
-                    log.error("exception", e);
+//                    log.error("exception", e);
                 }
                 countDownLatch.countDown();
             });
         }
         countDownLatch.await();
         executorService.shutdown();
-        log.info("count:{}", count);
+//        log.info("count:{}", count);
     }
 
     private static void add() {
